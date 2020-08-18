@@ -2,16 +2,14 @@
 <img width="260" height="170" src="https://image.flaticon.com/icons/svg/997/997261.svg" align="right" >
 </p>
 
+# :colombia: 0x01. Insert in sorted linked list
 
-
-
-
-# :colombia: 0x01. Insert in sorted linked list                                                            
 - Write a function in C that inserts a number into a sorted singly linked list.
-- Prototype: listint_t *insert_node(listint_t **head, int number);
+- Prototype: listint_t \*insert_node(listint_t \*\*head, int number);
 - Return: the address of the new node, or NULL if it failed
 
 ## Prerequisites
+
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 14.04 LTS
 - Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
@@ -25,22 +23,31 @@
 - All your header files should be include guarded
 
 ## Built With
+
 - Emacs
 - Ubuntu 14.04 LTS
+
 #### Compile
+
     `gcc 4.8.4 -Wall -Werror -Wextra and -pedantic`
+
 ## Contributing
---Santiago Yanguas <br>   - Holberton Student                                          
+
+--Santiago Yanguas <br> - Holberton Student
+
 ## Versioning
+
 For my learning of Interviews in Holberton School
+
 ## Authors
----Santiago Yanguas  946@holbertonshcool.com                                    
-                                                                               
+
+---Santiago Yanguas 946@holbertonshcool.com
+
 ## Files
 
-|             File               |             Description                  |
-|--------------------------------| ---------------------------------------- |
-|**lists.h**| Header file all functions |
-|**0-insert_number.c**| Insert Number based in the sort |
-|**linked_lists.c**| Functions of Linked List |
-|**0-main.c**| Main of the program |
+| File                  | Description                     |
+| --------------------- | ------------------------------- |
+| **lists.h**           | Header file all functions       |
+| **0-insert_number.c** | Insert Number based in the sort |
+| **linked_lists.c**    | Functions of Linked List        |
+| **0-main.c**          | Main of the program             |
