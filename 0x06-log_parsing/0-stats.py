@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+""" This is my problem :'v """
 import sys
 import re
 import signal
 from collections import OrderedDict
-
 
 def search_items(line, s):
     """ Search the items to positionate """
