@@ -62,6 +62,8 @@ if __name__ == "__main__":
 
             i += 1
     except KeyboardInterrupt:
+        pass
+    finally:
         print("File size: {:d}".format(file_size))
         print_all(status)
         sys.exit(0)
