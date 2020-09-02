@@ -7,16 +7,19 @@ from collections import OrderedDict
 
 def search_items(line, s):
     """ Search the items to positionate """
-    txt = re.search("\s\d{3}\s\d{1,}", line)
+    regexu = r"\s\d{3}\s\d{1,}"
+    txt = re.search(regexu, line)
     word = txt.group()
     word = word[1:]
 
-    left = re.search("\d{3}\s", word)
+    regexd = r"\d{3}\s"
+    left = re.search(regexd, word)
 
     code = left.group()
     code = code[:-1]
 
-    right = re.search("\s\d{1,}", word)
+    regext = r"\s\d{1,}"
+    right = re.search(regext, word)
 
     size = right.group()
     size = size[1:]
@@ -34,16 +37,18 @@ def add_code(code, codes):
     except KeyError:
         pass
 
+
 def print_all(stat):
     """ Print all """
     stat = OrderedDict(stat)
 
-
     for key, value in stat.items():
         print("{}: {}".format(key, value))
 
+
 if __name__ == "__main__":
-    status = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
+    status = {"200": 0, "301": 0, "400": 0, "401": 0,
+              "403": 0, "404": 0, "405": 0, "500": 0}
     file_size = 0
     i = 0
 
