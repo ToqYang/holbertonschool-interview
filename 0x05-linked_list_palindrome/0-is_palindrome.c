@@ -1,6 +1,5 @@
 #include "lists.h"
 
-
 /**
  * is_palindrome - Verify if a linked list is palindrome
  * @head: (listint_t **) Head of the node
@@ -15,7 +14,7 @@ int is_palindrome(listint_t **head)
 	if (!length_all)
 		return (1);
 
-        listint_t *left = *head;
+	listint_t *left = *head;
 
 	for (; step < length_half; ++step)
 	{
@@ -24,17 +23,16 @@ int is_palindrome(listint_t **head)
 		size_t k = (length_all - step);
 		/* Get the node of the right */
 		for (size_t j = 1; (j < k) && (right->next); ++j)
-                        right = right->next;
+			right = right->next;
 
 		if (left->n != right->n)
 			return (0);
 
-                left = left->next;
+		left = left->next;
 	}
 
 	return (1);
 }
-
 
 /**
  * length_linked - Look amount of nodes
@@ -46,9 +44,8 @@ int length_linked(listint_t *head)
 {
 	int i = 0;
 
-	for (; head != NULL ; ++i, (head = head->next))
+	for (; head != NULL; ++i, (head = head->next))
 		;
 
 	return (i);
 }
-

@@ -10,8 +10,7 @@
 int main(void)
 {
 	listint_t *headpair = NULL, *headodd = NULL;
-        listint_t *empty = NULL, *notis = NULL;
-
+	listint_t *empty = NULL, *notis = NULL;
 
 	add_nodeint_end(&headpair, 1);
 	add_nodeint_end(&headpair, 17);
@@ -32,14 +31,14 @@ int main(void)
 
 	free_listint(headpair);
 
-        puts("=========================");
+	puts("=========================");
 
-        add_nodeint_end(&headodd, 1);
+	add_nodeint_end(&headodd, 1);
 	add_nodeint_end(&headodd, 17);
 	add_nodeint_end(&headodd, 972);
 	add_nodeint_end(&headodd, 50);
 	add_nodeint_end(&headodd, 98);
-        add_nodeint_end(&headodd, 1);
+	add_nodeint_end(&headodd, 1);
 	add_nodeint_end(&headodd, 98);
 	add_nodeint_end(&headodd, 50);
 	add_nodeint_end(&headodd, 972);
@@ -54,17 +53,16 @@ int main(void)
 
 	free_listint(headodd);
 
-        puts("=========================");
-
+	puts("=========================");
 
 	if (is_palindrome(&empty) == 1)
 		printf("Linked list is a palindrome\n");
 	else
 		printf("Linked list is not a palindrome\n");
 
-        puts("==========Palindrome===============");
+	puts("==========Palindrome===============");
 
-        add_nodeint_end(&notis, 1);
+	add_nodeint_end(&notis, 1);
 	add_nodeint_end(&notis, 17);
 	add_nodeint_end(&notis, 972);
 	add_nodeint_end(&notis, 50);
@@ -83,7 +81,7 @@ int main(void)
 
 	free_listint(notis);
 
-        puts("=========================");
+	puts("=========================");
 
 	return (0);
 }
