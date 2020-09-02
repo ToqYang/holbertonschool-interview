@@ -5,6 +5,7 @@ import re
 import signal
 from collections import OrderedDict
 
+
 def search_items(line, s):
     """ Search the items to positionate """
     regexu = r"\s\d{3}\s\d{1,}"
