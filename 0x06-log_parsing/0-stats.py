@@ -2,6 +2,7 @@
 import sys
 import re
 import signal
+from collections import OrderedDict
 
 
 def search_items(line, s):
@@ -28,35 +29,31 @@ def search_items(line, s):
 
 def add_code(code, codes):
     """ Count the status code """
-    for key, value in codes.items():
-        if key == code:
-            codes[key] += 1
-
+    try:
+        codes[code] += 1
+    except KeyError:
+        pass
 
 def print_all(stat):
     """ Print all """
-    status = sorted(stat)
-    codes = sorted(stat.values())
+    stat = OrderedDict(stat)
 
-    for x in range(0, len(status)):
-        print("{:s}: {:d}".format(status[x], codes[x]))
 
+    for key, value in stat.items():
+        print("{}: {}".format(key, value))
 
 if __name__ == "__main__":
-    status = {"200": 0, "301": 0, "400": 0, "401": 0,
-                "403": 0, "404": 0, "405": 0, "500": 0}
+    status = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
     file_size = 0
     i = 0
 
     try:
         for lines in sys.stdin:
             file_size += search_items(lines, status)
-            print(lines)
 
             if i is not 0 and i % 9 == 0:
                 print("File size: {:d}".format(file_size))
                 print_all(status)
-                status = dict.fromkeys(status, 0)
 
             i += 1
     except KeyboardInterrupt:
