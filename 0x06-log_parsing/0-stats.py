@@ -43,7 +43,8 @@ def print_all(stat):
     stat = OrderedDict(stat)
 
     for key, value in stat.items():
-        print("{}: {}".format(key, value))
+        if value is not 0:
+            print("{}: {}".format(key, value))
 
 
 if __name__ == "__main__":
