@@ -51,8 +51,9 @@ if __name__ == "__main__":
     try:
         for lines in sys.stdin:
             file_size += search_items(lines, status)
+            print(lines)
 
-            if i % 10 == 0:
+            if i is not 0 and i % 9 == 0:
                 print("File size: {:d}".format(file_size))
                 print_all(status)
                 status = dict.fromkeys(status, 0)
