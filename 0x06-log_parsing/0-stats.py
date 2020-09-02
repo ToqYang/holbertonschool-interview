@@ -50,12 +50,12 @@ if __name__ == "__main__":
 
     try:
         for lines in sys.stdin:
-            status = dict.fromkeys(status, 0)
             file_size += search_items(lines, status)
 
             if i % 10 == 0:
                 print("File size: {:d}".format(file_size))
                 print_all(status)
+                status = dict.fromkeys(status, 0)
 
             i += 1
     except KeyboardInterrupt:
