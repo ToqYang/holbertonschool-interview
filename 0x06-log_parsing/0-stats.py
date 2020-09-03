@@ -45,7 +45,7 @@ def print_all(stat):
 
     for key, value in stat.items():
         if value is not 0:
-            print("{}:{}".format(key, value))
+            print("{}: {}".format(key, value))
 
 
 if __name__ == "__main__":
