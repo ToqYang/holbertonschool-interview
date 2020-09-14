@@ -15,13 +15,13 @@ size_t print_listint(const listint_t *h)
 	current = h;
 	n = 0;
 	while (current != NULL)
-    	{
+	{
 		printf("%i\n", current->n);
 		current = current->next;
 		n++;
-    	}
+	}
 
-    	return (n);
+	return (n);
 }
 
 /**
@@ -32,26 +32,26 @@ size_t print_listint(const listint_t *h)
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-    	listint_t *new;
-    	listint_t *current;
+	listint_t *new;
+	listint_t *current;
 
-    	current = *head;
+	current = *head;
 
-    	new = malloc(sizeof(listint_t));
-    	if (new == NULL)
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
 		return (NULL);
 
-    	new->n = n;
-    	new->next = NULL;
+	new->n = n;
+	new->next = NULL;
 
-    	if (*head == NULL)
+	if (*head == NULL)
 		*head = new;
-    	else
-    	{
+	else
+	{
 		while (current->next != NULL)
-	    		current = current->next;
+			current = current->next;
 		current->next = new;
-    	}
+	}
 
 	return (new);
 }
