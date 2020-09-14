@@ -1,10 +1,10 @@
 <p>
-<img width="260" height="170" src="https://image.flaticon.com/icons/svg/2809/2809659.svg" align="right" >
+<img width="260" height="170" src="https://www.flaticon.com/svg/static/icons/svg/2809/2809650.svg" align="right" >
 </p>
 
-# :colombia: 0x05. Linked list palindrome
+# :colombia: 0x08. Palindrome integer
 
-- Linked list palindrome
+- Palindrome Integer
 
 ## Prerequisites
 
