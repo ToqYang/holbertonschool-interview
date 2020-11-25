@@ -30,7 +30,7 @@ function ReqString(index, url, characters, final) {
       const mebody = JSON.parse(body);
       console.log(mebody.name);
       index++;
-      ReqString(indx, characters[idx], characters, final);
+      ReqString(index, characters[idx], characters, final);
     } else {
       console.error('error:', error);
     }
