@@ -1,36 +1,37 @@
 #!/usr/bin/node
-/*
-  Who was playing in this movie?
-*/
+
+// Star Wars API
 
 const argv = process.argv;
-const urlMovie = `https://swapi-api.hbtn.io/api/films/${argv[2]}/`;
+const urlFilm = 'https://swapi-api.hbtn.io/api/films/';
+const urlMovie = `${urlFilm}${argv[2]}/`;
+
 const request = require('request');
 
 request(urlMovie, function (error, response, body) {
   if (error == null) {
-    const mebody = JSON.parse(body);
-    const characters = mebody.characters;
+    const fbody = JSON.parse(body);
+    const characters = fbody.characters;
 
     if (characters && characters.length > 0) {
-      const final = characters.length;
-      ReqString(0, characters[0], characters, final);
+      const limit = characters.length;
+      CharRequest(0, characters[0], characters, limit);
     }
   } else {
     console.log(error);
   }
 });
 
-function ReqString(index, url, characters, final) {
-  if (index === final) {
+function CharRequest (idx, url, characters, limit) {
+  if (idx === limit) {
     return;
   }
   request(url, function (error, response, body) {
     if (!error) {
-      const mebody = JSON.parse(body);
-      console.log(mebody.name);
-      index++;
-      ReqString(index, characters[idx], characters, final);
+      const rbody = JSON.parse(body);
+      console.log(rbody.name);
+      idx++;
+      CharRequest(idx, characters[idx], characters, limit);
     } else {
       console.error('error:', error);
     }
